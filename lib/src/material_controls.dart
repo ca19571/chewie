@@ -273,9 +273,7 @@ class _MaterialControlsState extends State<MaterialControls> {
       padding: EdgeInsets.only(right: 24.0),
       child: Text(
         '${formatDuration(position)} / ${formatDuration(duration)}',
-        style: TextStyle(
-          fontSize: 14.0,
-        ),
+        style: Theme.of(context).textTheme.caption,
       ),
     );
   }
