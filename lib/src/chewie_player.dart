@@ -19,7 +19,8 @@ typedef Widget ChewieRoutePageBuilder(
 /// `video_player` is pretty low level. Chewie wraps it in a friendly skin to
 /// make it easy to use!
 class Chewie extends StatefulWidget {
-  Chewie({
+  final bool isRotated;
+  Chewie({@required this.isRotated,
     Key key,
     this.controller,
   })  : assert(controller != null, 'You must provide a chewie controller'),
@@ -71,7 +72,7 @@ class ChewieState extends State<Chewie> {
   Widget build(BuildContext context) {
     return _ChewieControllerProvider(
       controller: widget.controller,
-      child: PlayerWithControls(),
+      child: PlayerWithControls(isRotated: widget.isRotated,),
     );
   }
 
