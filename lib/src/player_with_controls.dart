@@ -12,6 +12,19 @@ class PlayerWithControls extends StatelessWidget {
 
   PlayerWithControls({@required this.isRotated, Key key}) : super(key: key);
 
+
+  Widget getContentWidget(ChewieController chewieController) {
+    if(!chewieController.isFullScreen) {
+      return RotatedBox(
+        quarterTurns: isRotated || isRotated != null ? 2 : 0,
+        child: VideoPlayer(chewieController.videoPlayerController),
+      );
+    }
+    else {
+      return Container();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final ChewieController chewieController = ChewieController.of(context);
@@ -41,10 +54,7 @@ class PlayerWithControls extends StatelessWidget {
             child: AspectRatio(
                 aspectRatio: chewieController.aspectRatio ??
                     _calculateAspectRatio(context),
-                child: RotatedBox(
-                  quarterTurns: isRotated || isRotated != null ? 2 : 0,
-                  child: VideoPlayer(chewieController.videoPlayerController),
-                ),
+                child: getContentWidget(chewieController),
             ),
           ),
           chewieController.overlay ?? Container(),
