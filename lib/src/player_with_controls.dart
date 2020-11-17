@@ -39,10 +39,15 @@ class PlayerWithControls extends StatelessWidget {
                   _calculateAspectRatio(context),
               child: OrientationBuilder(
                 builder: (context, orientation) {
-                  return RotatedBox(
-                    quarterTurns: isRotated ? 2 : 0,
-                    child: VideoPlayer(chewieController.videoPlayerController),
-                  );
+                  if (orientation != null) {
+                    return RotatedBox(
+                      quarterTurns: isRotated? 2 : 0,
+                      child: VideoPlayer(chewieController.videoPlayerController),
+                    );
+                  }
+                  else {
+                    return(Container());
+                  }
                 },
               )
             ),
