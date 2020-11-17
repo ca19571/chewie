@@ -10,10 +10,10 @@ import 'package:video_player/video_player.dart';
 class PlayerWithControls extends StatelessWidget {
   final bool isRotated;
   PlayerWithControls({@required this.isRotated, Key key}) : super(key: key);
-  
-  Widget getVideoWidget(context, orientation) {
+
+  Widget getVideoWidget(BuildContext context, Orientation orientation) {
     Widget result;
-    
+
     result = OrientationBuilder(
       builder: (context, orientation) {
         return RotatedBox(
@@ -22,7 +22,7 @@ class PlayerWithControls extends StatelessWidget {
         );
       },
     );
-    
+
     return result == null ? Container() : result;
   }
 
@@ -44,7 +44,7 @@ class PlayerWithControls extends StatelessWidget {
 
   Container _buildPlayerWithControls(
       ChewieController chewieController, BuildContext context) {
-    print(222222222222222222222222222222222222222);
+    print(222222222222);
     return Container(
       child: Stack(
         children: <Widget>[
