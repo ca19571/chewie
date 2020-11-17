@@ -40,7 +40,7 @@ class PlayerWithControls extends StatelessWidget {
               child: OrientationBuilder(
                 builder: (context, orientation) {
                   return RotatedBox(
-                    quarterTurns: isRotated && orientation != Orientation.landscape ? 2 : 0,
+                    quarterTurns: 2,
                     child: VideoPlayer(chewieController.videoPlayerController),
                   );
                 },
