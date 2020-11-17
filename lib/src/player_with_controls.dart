@@ -29,6 +29,7 @@ class PlayerWithControls extends StatelessWidget {
 
   Container _buildPlayerWithControls(
       ChewieController chewieController, BuildContext context) {
+    print(1);
     return Container(
       child: Stack(
         children: <Widget>[
