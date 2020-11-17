@@ -42,7 +42,7 @@ class PlayerWithControls extends StatelessWidget {
                 aspectRatio: chewieController.aspectRatio ??
                     _calculateAspectRatio(context),
                 child: RotatedBox(
-                  quarterTurns: isRotated ? 2 : 0,
+                  quarterTurns: 0,
                   child: VideoPlayer(chewieController.videoPlayerController),
                 ),
             ),
